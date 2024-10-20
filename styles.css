@@ -1,0 +1,148 @@
+/* Basic styles for structure; participants can modify or replace this */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #343a40;
+    color: white;
+}
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.nav-link:hover {
+    background-color: #495057;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+/* Hero Section */
+.hero {
+    position: relative; /* Allow overlay positioning */
+    text-align: center;
+    padding: 60px 20px;
+    background: url('https://st1.techlusive.in/wp-content/uploads/2023/10/Happy-Dussehra.jpg') no-repeat center center/cover;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Lightened overlay */
+    z-index: 1; /* Overlay above background but below content */
+}
+.hero h1, .hero p {
+    position: relative; /* Text above the overlay */
+    z-index: 2; /* Text above the overlay */
+}
+.hero h1 {
+    font-size: 4em;
+    color: #ff4500; /* Vibrant color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.hero p {
+    font-size: 1.5em;
+    color: #ff4500; /* Vibrant color */
+}
+
+/* Content Section */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Event Cards */
+.cards {
+    display: flex; /* Changed to flex for horizontal layout */
+    justify-content: space-around; /* Space evenly */
+    margin: 20px;
+    gap: 20px; /* Space between cards */
+}
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Equal space */
+    max-width: 300px; /* Max width for each card */
+    transition: transform 0.2s ease-in-out; /* Smooth hover transformation */
+}
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Blinking animation */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+.card:hover {
+    animation: blink 1s infinite; /* Blink on hover */
+    transform: scale(1.05); /* Slightly enlarge card */
+}
+
+/* Schedule Section */
+.schedule {
+    background-color: #e9ecef;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    display: flex; /* Horizontal layout */
+    justify-content: space-around; /* Space evenly */
+}
+.schedule div {
+    flex: 1; /* Equal space */
+    text-align: center; /* Center text */
+}
+
+/* Registration Form */
+.registration {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.registration h2 {
+    color: #ff4500; /* Title color */
+}
+.registration input, .registration button {
+    padding: 10px;
+    margin: 10px 0;
+    width: calc(100% - 22px); /* Full width minus padding */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.registration button {
+    background-color: #343a40; /* Button background */
+    color: white;
+    cursor: pointer; /* Pointer cursor on hover */
+}
+.registration button:hover {
+    background-color: #495057; /* Darker shade on hover */
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #343a40;
+    color: white;
+    position: relative; /* Position relative for z-index */
+}
